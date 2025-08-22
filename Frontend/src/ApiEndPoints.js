@@ -1,6 +1,6 @@
 
 
-const baseUrl = "http://localhost:5000";
+const baseUrl = "https://ecommerce1-tq6e.onrender.com";
 
 // API Endpoints
 
