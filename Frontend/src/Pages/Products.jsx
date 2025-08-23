@@ -35,7 +35,7 @@ const Products = () => {
 
   return (
     <>
-      {/* Pass search state to Navbar */}
+      {/* Navbar search (desktop / tablet) */}
       <Navbar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
 
       <div className="pt-24 pb-16 px-6 bg-gradient-to-r from-green-100 via-gray-200 to-gray-100 min-h-screen">
@@ -51,14 +51,14 @@ const Products = () => {
               {filteredProducts.length !== 1 ? "s" : ""}.
             </p>
 
-            {/* 🔍 Mobile Search Bar */}
-            <div className="mt-4 sm:hidden">
+            {/* 🔍 Force Mobile Search Bar */}
+            <div className="mt-4 block sm:hidden">
               <input
                 type="text"
                 placeholder="Search products..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-green-500 focus:outline-none"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow focus:ring-2 focus:ring-green-500 focus:outline-none bg-white"
               />
             </div>
           </div>
