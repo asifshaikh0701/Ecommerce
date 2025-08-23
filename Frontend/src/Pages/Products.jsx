@@ -38,7 +38,7 @@ const Products = () => {
       {/* Pass search state to Navbar */}
       <Navbar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
 
-      <div className="pt-24 pb-16 px-6 bg-gradient-to-r from-green-100 via-gray-200 to-gray-100run  min-h-screen">
+      <div className="pt-24 pb-16 px-6 bg-gradient-to-r from-green-100 via-gray-200 to-gray-100 min-h-screen">
         <div className="max-w-7xl mx-auto">
           <div className="mb-8">
             <h1 className="text-4xl font-bold text-green-800">
@@ -50,6 +50,17 @@ const Products = () => {
               Showing {filteredProducts.length} product
               {filteredProducts.length !== 1 ? "s" : ""}.
             </p>
+
+            {/* 🔍 Mobile Search Bar */}
+            <div className="mt-4 sm:hidden">
+              <input
+                type="text"
+                placeholder="Search products..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-green-500 focus:outline-none"
+              />
+            </div>
           </div>
 
           {filteredProducts.length === 0 ? (
@@ -98,7 +109,3 @@ const Products = () => {
 };
 
 export default Products;
-
-
-
-
